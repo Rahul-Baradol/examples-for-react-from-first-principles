@@ -1,0 +1,223 @@
+*, *::before, *::after { box-sizing: border-box; }
+
+body {
+    margin: 0;
+    background: #0d1117;
+    color: #e6edf3;
+    font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+}
+
+code {
+    font-family: 'Courier New', monospace;
+    font-size: 0.9em;
+    background: #21262d;
+    padding: 0.1em 0.35em;
+    border-radius: 4px;
+}
+
+.dashboard {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 2rem 1.5rem 4rem;
+}
+
+/* ── Header ─────────────────────────────────────────────────────────────── */
+
+header h1 {
+    margin: 0 0 0.25rem;
+    font-size: 1.75rem;
+    color: #58a6ff;
+}
+
+.subtitle {
+    margin: 0 0 1.75rem;
+    color: #8b949e;
+    font-size: 0.9rem;
+}
+
+/* ── Stats bar ──────────────────────────────────────────────────────────── */
+
+.stats-bar {
+    display: flex;
+    gap: 1.5rem;
+    align-items: center;
+    background: #161b22;
+    border: 1px solid #30363d;
+    border-radius: 8px;
+    padding: 0.75rem 1.25rem;
+    margin-bottom: 1.5rem;
+    flex-wrap: wrap;
+}
+
+.stat {
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+}
+
+.stat-label {
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: #8b949e;
+}
+
+.stat-num {
+    font-size: 1.5rem;
+    font-weight: 700;
+    font-variant-numeric: tabular-nums;
+    color: #e6edf3;
+}
+
+.stat-note {
+    margin-left: auto;
+    font-size: 0.78rem;
+    color: #7ee787;
+    font-style: italic;
+    max-width: 240px;
+    text-align: right;
+}
+
+/* ── Cards ───────────────────────────────────────────────────────────────── */
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1rem;
+    margin-bottom: 1.25rem;
+}
+
+.card {
+    background: #161b22;
+    border: 1px solid #30363d;
+    border-radius: 8px;
+    padding: 1rem 1.1rem;
+}
+
+.card--hi {
+    border-color: #58a6ff;
+    background: #0d1f38;
+}
+
+.card-label {
+    font-size: 0.72rem;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: #8b949e;
+    margin-bottom: 0.35rem;
+}
+
+.card-value {
+    font-size: 2rem;
+    font-weight: 700;
+    font-variant-numeric: tabular-nums;
+    line-height: 1.1;
+}
+
+.card--hi .card-value {
+    color: #58a6ff;
+}
+
+/* ── Status bar ─────────────────────────────────────────────────────────── */
+
+.status-bar {
+    background: #1c1f24;
+    border: 1px solid #f0883e55;
+    border-radius: 6px;
+    padding: 0.7rem 1.1rem;
+    font-size: 0.9rem;
+    color: #f0883e;
+    margin-bottom: 1.25rem;
+    min-height: 2.5rem;
+}
+
+/* ── Log panel ───────────────────────────────────────────────────────────── */
+
+.log-panel {
+    background: #161b22;
+    border: 1px solid #30363d;
+    border-radius: 8px;
+    padding: 1rem 1.25rem;
+    margin-bottom: 1.25rem;
+}
+
+.log-panel h3 {
+    margin: 0 0 0.75rem;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: #8b949e;
+    display: flex;
+    gap: 0.75rem;
+    align-items: baseline;
+    flex-wrap: wrap;
+}
+
+.log-panel h3 small {
+    font-weight: 400;
+    text-transform: none;
+    letter-spacing: 0;
+    color: #f0883e;
+    font-style: italic;
+}
+
+#log-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    font-size: 0.78rem;
+    font-family: 'Courier New', monospace;
+    color: #7ee787;
+    max-height: 200px;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+}
+
+#log-list li {
+    padding: 0.25rem 0;
+    border-bottom: 1px solid #21262d;
+}
+
+/* ── Explainer ───────────────────────────────────────────────────────────── */
+
+.explainer {
+    background: #161b22;
+    border: 1px solid #30363d;
+    border-radius: 8px;
+    padding: 1rem 1.25rem;
+}
+
+.explainer h3 {
+    margin: 0 0 0.75rem;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: #8b949e;
+}
+
+.explainer ol {
+    margin: 0;
+    padding-left: 1.25rem;
+    font-size: 0.85rem;
+    color: #8b949e;
+    line-height: 1.7;
+}
+
+.explainer li + li {
+    margin-top: 0.3rem;
+}
+
+.explainer strong {
+    color: #e6edf3;
+}
+
+.explainer em {
+    color: #f0883e;
+}
+
+@media (max-width: 700px) {
+    .cards { grid-template-columns: repeat(2, 1fr); }
+    .stats-bar { flex-direction: column; align-items: flex-start; }
+    .stat-note { margin-left: 0; text-align: left; }
+}
